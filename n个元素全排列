@@ -1,0 +1,42 @@
+//求n个元素的全排列
+//abc acb bac bca cab cba
+#include<stdio.h>
+#include<string.h>
+void f(char data[],int k) //k,当前的交换位置（关注点），与其后的元素交换
+{
+	int length = strlen(data);
+	int i;
+	if(k==length)
+	{
+		for(i=0;i<length;i++)
+		{
+			printf("%c",data[i]);
+			if((i+1)%length==0)
+			printf("\n");
+			 
+		}
+		
+	}
+	 for(i=k;i<length;i++)
+	 {
+	 	{
+	 		char t = data[k];			//试探 
+	 		data[k] = data[i];			
+	 		data[i] = t;
+		}
+	 	f(data,k+1);
+	 /*	{
+	 		char t = data[k];			//回溯
+	 		data[k] = data[i];
+	 		data[i] = t;
+		}*/
+	 }
+	 
+	 
+}
+int main()
+{
+	char data[] = "ABCD";
+	f(data,0);
+	return 0;
+ } 
