@@ -1,0 +1,20 @@
+/*将数组中的数头尾互换*/
+
+#include<stdio.h>
+void swap(int *x,int *y)
+{
+	int temp;		/* 不可写成 *temp */ 
+	temp=*x;
+	*x=*y;
+	*y=temp;
+}
+int main()
+{
+	int i,j;
+	int a[10]={1,2,3,4,5,6,7,8,9,10};
+	for(i=0,j=9;i<j;i++,j--)
+		swap(&a[i],&a[j]);
+	for(i=0;i<10;i++)
+		printf("%3d",a[i]);
+	return 0;
+}
