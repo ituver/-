@@ -1,0 +1,16 @@
+/*用函数指针：两个数比较大小（返回大数）*/
+
+#include<stdio.h> 
+int max(int x,int y)
+{
+	return (x>y?x:y);
+}
+int main()
+{
+	int a=1,b=2,m;
+	int (*p)();				/* 定义函数指针*/ 
+	p=max;					/* 函数的入口地址即函数名*/ 
+	m=(*p)(a,b);			/*指针p调用函数*/ 
+	printf("max=%d\n",m);
+	return 0;
+}
