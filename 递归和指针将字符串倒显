@@ -1,0 +1,20 @@
+/*递归和指针将字符串倒显*/
+
+#include<stdio.h>
+back_disp(char *p)
+{
+	if(! *p)	return ;
+	else{
+		p++;
+		back_disp(p);
+	}
+	printf("%c",*(--p));
+}
+int main()
+{
+	char *string="abcdefg";
+	printf("%s\n\n",string);
+	back_disp(string);
+	return 0;
+	
+}
